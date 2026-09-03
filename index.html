@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WELCOME TO BHADUR MIA BARI</title>
   
-  <!-- Google Fonts for Bengali & English -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset & Base Styles */
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -29,11 +28,12 @@
       margin: 0 auto;
     }
 
-    /* Hero Section */
+    /* Hero Section (১ নম্বর ছবি ব্যাকগ্রাউন্ডে) */
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('1.png');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       height: 65vh;
       display: flex;
       align-items: center;
@@ -109,12 +109,12 @@
       color: #f4b41a;
     }
 
-    /* Auth Section */
+    /* Auth / Member Section */
     .auth-box {
       background-color: #ffffff;
       border-radius: 10px;
       padding: 25px;
-      margin: 30px auto 0 auto;
+      margin: 20px auto 0 auto;
       max-width: 450px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -167,7 +167,7 @@
       font-weight: bold;
     }
 
-    /* Sections */
+    /* Section Utility Classes */
     .section {
       padding: 60px 0;
     }
@@ -183,6 +183,10 @@
       color: #143d59;
     }
 
+    .text-white {
+      color: #ffffff !important;
+    }
+
     .about-content {
       text-align: center;
       font-size: 1.2rem;
@@ -190,22 +194,38 @@
       margin: 0 auto;
     }
 
-    /* Gallery Grid */
+    /* Gallery Section WITH Background (১ নম্বর ছবি ব্যাকগ্রাউন্ডে) */
+    .gallery-section {
+      background: linear-gradient(rgba(20, 61, 89, 0.85), rgba(20, 61, 89, 0.85)), url('1.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
-    .placeholder-img {
-      background-color: #cbd5e0;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      color: #4a5568;
-      font-weight: bold;
+    .gallery-card {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      background: #000;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.08);
+      opacity: 0.9;
     }
 
     /* Group Link Styling */
@@ -237,7 +257,7 @@
       transform: translateY(-3px);
     }
 
-    /* Location */
+    /* Location Section */
     .address-text {
       text-align: center;
       font-size: 1.1rem;
@@ -258,7 +278,7 @@
       padding: 20px 0;
     }
 
-    /* Mobile Responsive */
+    /* Responsive Design */
     @media (max-width: 768px) {
       .welcome-title {
         font-size: 1.8rem;
@@ -271,7 +291,6 @@
 </head>
 <body>
 
-  <!-- Hero Header Section -->
   <header class="hero">
     <div class="hero-overlay">
       <div class="container">
@@ -282,7 +301,6 @@
     </div>
   </header>
 
-  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="logo">বাহাদুর মিঞা বাড়ি</div>
@@ -296,18 +314,15 @@
     </div>
   </nav>
 
-  <!-- Google Login Section -->
   <section id="login-section" class="section bg-light">
     <div class="container">
       <h2 class="section-title">সদস্য এলাকা</h2>
       <div class="auth-box">
-        <!-- লগইন না থাকলে এটি দেখাবে -->
         <button id="login-btn" class="google-btn">
           <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
           Gmail / Google দিয়ে লগইন করুন
         </button>
 
-        <!-- লগইন করলে ইউজারের প্রোফাইল দেখাবে -->
         <div id="user-card" class="user-card">
           <img id="user-img" src="" width="70" alt="Profile Picture">
           <h3 id="user-name"></h3>
@@ -318,7 +333,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">আমাদের বাড়ির কথা</h2>
@@ -331,38 +345,34 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="section bg-light">
+  <section id="gallery" class="section gallery-section">
     <div class="container">
-      <h2 class="section-title">ছবি ও স্মৃতিসমূহ</h2>
+      <h2 class="section-title text-white">ছবি ও স্মৃতিসমূহ</h2>
       <div class="gallery-grid">
         <div class="gallery-card">
-          <div class="placeholder-img">ছবি ১ (বাড়ির দৃশ্য)</div>
+          <img src="1.png" alt="মসজিদের দিনের দৃশ্য" class="gallery-img">
         </div>
         <div class="gallery-card">
-          <div class="placeholder-img">ছবি ২ (প্রাকৃতিক সৌন্দর্য)</div>
+          <img src="2.png" alt="মসজিদের রাতের আলোকসজ্জা" class="gallery-img">
         </div>
         <div class="gallery-card">
-          <div class="placeholder-img">ছবি ৩ (স্মৃতিচিহ্ন)</div>
+          <img src="3.png" alt="বাড়ির প্রাকৃতিক দৃশ্য" class="gallery-img">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Group Link Section -->
   <section id="group-link" class="section group-section">
     <div class="container">
       <h2 class="section-title">আমাদের পারিবারিক/গ্রামের গ্রুপ</h2>
       <p class="group-desc">বাড়ির সবার সাথে যুক্ত থাকতে এবং আপডেট পেতে আমাদের গ্রুপে যোগ দিন:</p>
       
-      <!-- আপনার আসল গ্রুপের লিংকটি নিচে href-এর ভেতরে দিবেন -->
       <a href="https://facebook.com" target="_blank" class="group-btn-link">
         👥 আমাদের গ্রুপে জয়েন করুন
       </a>
     </div>
   </section>
 
-  <!-- Location Section (গুগল ম্যাপ) -->
   <section id="location" class="section bg-light">
     <div class="container">
       <h2 class="section-title">আমাদের অবস্থান ও গুগল ম্যাপ</h2>
@@ -383,19 +393,17 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© ২০২৬ বাহাদুর মিঞা বাড়ি | সর্বস্বত্ব সংরক্ষিত</p>
     </div>
   </footer>
 
-  <!-- Firebase JavaScript (Google Authentication) -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
     import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 
-    // আপনার Firebase কনফিগারেশন কি (Firebase Console থেকে সংগ্রহ করতে হবে)
+    // আপনার Firebase Config (Firebase Console থেকে ক্রিয়েট করে এখানে আপনার Key বসাতে হবে)
     const firebaseConfig = {
       apiKey: "YOUR_API_KEY",
       authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -405,7 +413,6 @@
       appId: "YOUR_APP_ID"
     };
 
-    // Firebase Initialize
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
@@ -417,7 +424,6 @@
     const userImg = document.getElementById('user-img');
     const logoutBtn = document.getElementById('logout-btn');
 
-    // Login Event
     loginBtn.addEventListener('click', () => {
       signInWithPopup(auth, provider)
         .then((result) => {
@@ -429,12 +435,11 @@
           userImg.src = user.photoURL;
         })
         .catch((error) => {
-          console.error("Login Failed:", error);
-          alert("Firebase SDK সেটআপ ছাড়া গুগলে সরাসরি ওয়েবসাইট থেকে লগইন লাইভ হবে না। আপনার Firebase Credentials যুক্ত করুন।");
+          console.error("Login Error:", error);
+          alert("গুগল দিয়ে লগইন সম্পূর্ণ লাইভ করতে Firebase-এ আপনার ডোমেইন যুক্ত ও Credentials আপডেট করতে হবে।");
         });
     });
 
-    // Logout Event
     logoutBtn.addEventListener('click', () => {
       signOut(auth).then(() => {
         loginBtn.style.display = 'inline-flex';
