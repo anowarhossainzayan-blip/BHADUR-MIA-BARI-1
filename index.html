@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Global Styles */
+    /* Global Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -34,7 +34,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      height: 65vh;
+      height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -44,22 +44,21 @@
 
     .welcome-title {
       font-family: 'Poppins', sans-serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      letter-spacing: 2px;
       color: #f4b41a;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       margin-bottom: 10px;
     }
 
     .subtitle {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 20px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 28px;
+      padding: 10px 24px;
       background-color: #f4b41a;
       color: #143d59;
       text-decoration: none;
@@ -109,51 +108,90 @@
       color: #f4b41a;
     }
 
-    /* Auth / Member Section */
-    .auth-box {
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 25px;
-      margin: 20px auto 0 auto;
-      max-width: 450px;
+    /* Sections Utility */
+    .section {
+      padding: 50px 0;
+    }
+
+    .bg-light {
+      background-color: #edf2f7;
+    }
+
+    .section-title {
       text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #143d59;
+    }
+
+    .text-white {
+      color: #ffffff !important;
+    }
+
+    /* Offline Account Box */
+    .auth-container {
+      max-width: 450px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .google-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #ffffff;
-      color: #757575;
-      border: 1px solid #dadce0;
-      padding: 10px 20px;
-      font-size: 1rem;
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #143d59;
+      background: #fff;
+      color: #143d59;
       font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.2s;
     }
 
-    .google-btn:hover {
-      background-color: #f8f9fa;
-      border-color: #c1c3c8;
+    .tab-btn.active {
+      background: #143d59;
+      color: #fff;
     }
 
-    .google-btn img {
-      width: 20px;
-      margin-right: 10px;
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
     }
 
-    .user-card {
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #143d59;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .user-profile {
       display: none;
       text-align: center;
-    }
-
-    .user-card img {
-      border-radius: 50%;
-      margin-bottom: 10px;
-      border: 3px solid #f4b41a;
     }
 
     .logout-btn {
@@ -164,29 +202,9 @@
       padding: 8px 16px;
       border-radius: 5px;
       cursor: pointer;
-      font-weight: bold;
     }
 
-    /* Section Utility Classes */
-    .section {
-      padding: 60px 0;
-    }
-
-    .bg-light {
-      background-color: #edf2f7;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #143d59;
-    }
-
-    .text-white {
-      color: #ffffff !important;
-    }
-
+    /* About Section */
     .about-content {
       text-align: center;
       font-size: 1.2rem;
@@ -217,18 +235,17 @@
 
     .gallery-img {
       width: 100%;
-      height: 230px;
+      height: 220px;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
 
     .gallery-img:hover {
-      transform: scale(1.08);
-      opacity: 0.9;
+      transform: scale(1.05);
     }
 
-    /* Group Link Styling */
+    /* Group Link Section */
     .group-section {
       text-align: center;
       background-color: #ffffff;
@@ -257,7 +274,7 @@
       transform: translateY(-3px);
     }
 
-    /* Location Section */
+    /* Location & Map Section */
     .address-text {
       text-align: center;
       font-size: 1.1rem;
@@ -268,6 +285,17 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin-bottom: 15px;
+    }
+
+    .map-btn-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4285F4;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
     }
 
     /* Footer */
@@ -278,7 +306,7 @@
       padding: 20px 0;
     }
 
-    /* Responsive Design */
+    /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .welcome-title {
         font-size: 1.8rem;
@@ -292,12 +320,10 @@
 <body>
 
   <header class="hero">
-    <div class="hero-overlay">
-      <div class="container">
-        <h1 class="welcome-title">WELCOME TO BHADUR MIA BARI</h1>
-        <p class="subtitle">মধ্য ভাদুর, রামগঞ্জ, লক্ষ্মীপুর</p>
-        <a href="#group-link" class="btn">আমাদের গ্রুপে যুক্ত হন</a>
-      </div>
+    <div class="container">
+      <h1 class="welcome-title">WELCOME TO BHADUR MIA BARI</h1>
+      <p class="subtitle">মধ্য ভাদুর, রামগঞ্জ, লক্ষ্মীপুর</p>
+      <a href="#group-link" class="btn">আমাদের গ্রুপে যুক্ত হন</a>
     </div>
   </header>
 
@@ -305,7 +331,7 @@
     <div class="container nav-container">
       <div class="logo">বাহাদুর মিঞা বাড়ি</div>
       <ul class="nav-links">
-        <li><a href="#login-section">লগইন</a></li>
+        <li><a href="#account-section">অ্যাকাউন্ট / লগইন</a></li>
         <li><a href="#about">পরিচয়</a></li>
         <li><a href="#gallery">গ্যালারি</a></li>
         <li><a href="#group-link">গ্রুপ লিংক</a></li>
@@ -314,20 +340,46 @@
     </div>
   </nav>
 
-  <section id="login-section" class="section bg-light">
+  <section id="account-section" class="section bg-light">
     <div class="container">
-      <h2 class="section-title">সদস্য এলাকা</h2>
-      <div class="auth-box">
-        <button id="login-btn" class="google-btn">
-          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
-          Gmail / Google দিয়ে লগইন করুন
-        </button>
+      <h2 class="section-title">মেম্বার অ্যাকাউন্ট (নাম ও পাসওয়ার্ড)</h2>
+      
+      <div class="auth-container">
+        <div id="auth-forms">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab('login')">লগইন করুন</button>
+            <button class="tab-btn" onclick="switchTab('signup')">নতুন অ্যাকাউন্ট</button>
+          </div>
 
-        <div id="user-card" class="user-card">
-          <img id="user-img" src="" width="70" alt="Profile Picture">
-          <h3 id="user-name"></h3>
-          <p id="user-email"></p>
-          <button id="logout-btn" class="logout-btn">Logout</button>
+          <form id="login-form" onsubmit="handleLogin(event)">
+            <div class="form-group">
+              <label>ইউজার নেম / নাম</label>
+              <input type="text" id="login-username" required placeholder="আপনার নাম লিখুন">
+            </div>
+            <div class="form-group">
+              <label>পাসওয়ার্ড</label>
+              <input type="password" id="login-password" required placeholder="পাসওয়ার্ড লিখুন">
+            </div>
+            <button type="submit" class="submit-btn">লগইন</button>
+          </form>
+
+          <form id="signup-form" onsubmit="handleSignup(event)" style="display: none;">
+            <div class="form-group">
+              <label>আপনার নাম</label>
+              <input type="text" id="signup-username" required placeholder="আপনার নাম">
+            </div>
+            <div class="form-group">
+              <label>নতুন পাসওয়ার্ড</label>
+              <input type="password" id="signup-password" required placeholder="পাসওয়ার্ড বেছে নিন">
+            </div>
+            <button type="submit" class="submit-btn">অ্যাকাউন্ট তৈরি করুন</button>
+          </form>
+        </div>
+
+        <div id="user-profile" class="user-profile">
+          <h3>স্বাগতম, <span id="display-name" style="color: #143d59;"></span>!</h3>
+          <p style="margin-top: 5px; color: green;">✓ আপনার অফলাইন অ্যাকাউন্ট সক্রিয় রয়েছে</p>
+          <button onclick="handleLogout()" class="logout-btn">লগআউট</button>
         </div>
       </div>
     </div>
@@ -349,15 +401,9 @@
     <div class="container">
       <h2 class="section-title text-white">ছবি ও স্মৃতিসমূহ</h2>
       <div class="gallery-grid">
-        <div class="gallery-card">
-          <img src="1.png" alt="মসজিদের দিনের দৃশ্য" class="gallery-img">
-        </div>
-        <div class="gallery-card">
-          <img src="2.png" alt="মসজিদের রাতের আলোকসজ্জা" class="gallery-img">
-        </div>
-        <div class="gallery-card">
-          <img src="3.png" alt="বাড়ির প্রাকৃতিক দৃশ্য" class="gallery-img">
-        </div>
+        <div class="gallery-card"><img src="1.png" alt="ছবি ১" class="gallery-img"></div>
+        <div class="gallery-card"><img src="2.png" alt="ছবি ২" class="gallery-img"></div>
+        <div class="gallery-card"><img src="3.png" alt="ছবি ৩" class="gallery-img"></div>
       </div>
     </div>
   </section>
@@ -373,7 +419,7 @@
     </div>
   </section>
 
-  <section id="location" class="section bg-light">
+  <section id="location" class="section bg-light" style="text-align: center;">
     <div class="container">
       <h2 class="section-title">আমাদের অবস্থান ও গুগল ম্যাপ</h2>
       <p class="address-text">
@@ -390,6 +436,10 @@
           loading="lazy">
         </iframe>
       </div>
+
+      <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.023812345678!2d90.8512!3d23.1021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754eca96df739bf%3A0x86f5b2b412ebebe8!2sRamganj%2C%20Lakshmipur!5e1!3m2!1sen!2sbd!4v1680000000000!5m2!1sen!2sbd" target="_blank" class="map-btn-link">
+        🗺️ সরাসরি গুগল ম্যাপস অ্যাপে লোকেশন দেখুন
+      </a>
     </div>
   </section>
 
@@ -399,53 +449,80 @@
     </div>
   </footer>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-    import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+  <script>
+    function switchTab(type) {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      const btns = document.querySelectorAll('.tab-btn');
 
-    // আপনার Firebase Config (Firebase Console থেকে ক্রিয়েট করে এখানে আপনার Key বসাতে হবে)
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
+      if (type === 'login') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+      }
+    }
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
+    function handleSignup(e) {
+      e.preventDefault();
+      const name = document.getElementById('signup-username').value;
+      const pass = document.getElementById('signup-password').value;
 
-    const loginBtn = document.getElementById('login-btn');
-    const userCard = document.getElementById('user-card');
-    const userName = document.getElementById('user-name');
-    const userEmail = document.getElementById('user-email');
-    const userImg = document.getElementById('user-img');
-    const logoutBtn = document.getElementById('logout-btn');
+      let users = JSON.parse(localStorage.getItem('site_users')) || {};
+      
+      if(users[name]) {
+        alert('এই নামের অ্যাকাউন্ট ইতিমধ্যে তৈরি করা আছে!');
+        return;
+      }
 
-    loginBtn.addEventListener('click', () => {
-      signInWithPopup(auth, provider)
-        .then((result) => {
-          const user = result.user;
-          loginBtn.style.display = 'none';
-          userCard.style.display = 'block';
-          userName.innerText = user.displayName;
-          userEmail.innerText = user.email;
-          userImg.src = user.photoURL;
-        })
-        .catch((error) => {
-          console.error("Login Error:", error);
-          alert("গুগল দিয়ে লগইন সম্পূর্ণ লাইভ করতে Firebase-এ আপনার ডোমেইন যুক্ত ও Credentials আপডেট করতে হবে।");
-        });
-    });
+      users[name] = pass;
+      localStorage.setItem('site_users', JSON.stringify(users));
+      alert('অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! এখন নাম ও পাসওয়ার্ড দিয়ে লগইন করুন।');
+      switchTab('login');
+    }
 
-    logoutBtn.addEventListener('click', () => {
-      signOut(auth).then(() => {
-        loginBtn.style.display = 'inline-flex';
-        userCard.style.display = 'none';
-      });
-    });
+    function handleLogin(e) {
+      e.preventDefault();
+      const name = document.getElementById('login-username').value;
+      const pass = document.getElementById('login-password').value;
+
+      let users = JSON.parse(localStorage.getItem('site_users')) || {};
+
+      if(users[name] && users[name] === pass) {
+        localStorage.setItem('logged_in_user', name);
+        checkUserStatus();
+      } else {
+        alert('নাম অথবা পাসওয়ার্ড ভুল হয়েছে!');
+      }
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('logged_in_user');
+      checkUserStatus();
+    }
+
+    function checkUserStatus() {
+      const activeUser = localStorage.getItem('logged_in_user');
+      const authForms = document.getElementById('auth-forms');
+      const userProfile = document.getElementById('user-profile');
+      const displayName = document.getElementById('display-name');
+
+      if(activeUser) {
+        authForms.style.display = 'none';
+        userProfile.style.display = 'block';
+        displayName.innerText = activeUser;
+      } else {
+        authForms.style.display = 'block';
+        userProfile.style.display = 'none';
+      }
+    }
+
+    checkUserStatus();
   </script>
 
 </body>
