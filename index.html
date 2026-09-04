@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WELCOME TO BHADUR MIA BARI</title>
+  <title>ভাদুর মিয়া বাড়ি - BHADUR MIA BARI</title>
   
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -225,31 +224,39 @@
     }
 
     /* Event Section Styling */
-    .event-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .event-card {
+    .single-event-box {
+      max-width: 600px;
+      margin: 0 auto;
       background: #fff;
-      border-left: 5px solid #f4b41a;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      border-top: 6px solid #f4b41a;
+      padding: 35px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      text-align: center;
     }
 
-    .event-date {
-      color: #e53e3e;
+    .event-badge-tag {
+      display: inline-block;
+      background: #e53e3e;
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
       font-weight: bold;
-      font-size: 0.9rem;
-      margin-bottom: 5px;
+      margin-bottom: 12px;
     }
 
-    .event-title {
-      font-size: 1.2rem;
+    .event-main-title {
+      font-size: 2rem;
       color: #143d59;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    .event-desc {
+      font-size: 1.15rem;
+      color: #555;
     }
 
     /* About Section */
@@ -329,43 +336,38 @@
 </head>
 <body>
 
-  <!-- Hero Header -->
   <header class="hero">
     <div class="container">
       <h1 class="welcome-title">WELCOME TO BHADUR MIA BARI</h1>
-      <p class="subtitle">মধ্য ভাদুর, রামগঞ্জ, লক্ষ্মীপুর</p>
+      <p class="subtitle">এরশাদ হোসেন রোড, রামগঞ্জ ৩৭২০</p>
       <a href="#events-section" class="btn">ইভেন্ট ও নোটিশ দেখুন</a>
     </div>
   </header>
 
-  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
-      <div class="logo">ভাদুর মিয়া বাড়ি</div>
+      <div class="logo">ভাদুর মিয়া বাড়ি</div>
       <ul class="nav-links">
         <li><a href="#account-section">লগইন</a></li>
         <li><a href="#members-section">সদস্যবৃন্দ</a></li>
-        <li><a href="#events-section">ইভেন্টসমূহ</a></li>
+        <li><a href="#events-section">ইভেন্ট</a></li>
         <li><a href="#about">পরিচয়</a></li>
         <li><a href="#location">অবস্থান</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Offline Account / Login Section -->
   <section id="account-section" class="section bg-light">
     <div class="container">
       <h2 class="section-title">মেম্বার অ্যাকাউন্ট (নাম ও পাসওয়ার্ড)</h2>
       
       <div class="auth-container">
-        <!-- Logged Out View -->
         <div id="auth-forms">
           <div class="tab-buttons">
             <button class="tab-btn active" onclick="switchTab('login')">লগইন করুন</button>
             <button class="tab-btn" onclick="switchTab('signup')">নতুন অ্যাকাউন্ট</button>
           </div>
 
-          <!-- Login Form -->
           <form id="login-form" onsubmit="handleLogin(event)">
             <div class="form-group">
               <label>ইউজার নেম / নাম</label>
@@ -378,7 +380,6 @@
             <button type="submit" class="submit-btn">লগইন</button>
           </form>
 
-          <!-- Signup Form -->
           <form id="signup-form" onsubmit="handleSignup(event)" style="display: none;">
             <div class="form-group">
               <label>আপনার নাম</label>
@@ -392,7 +393,6 @@
           </form>
         </div>
 
-        <!-- Logged In Profile View -->
         <div id="user-profile" class="user-profile">
           <h3>স্বাগতম, <span id="display-name" style="color: #143d59;"></span>!</h3>
           <p style="margin-top: 5px; color: green;">✓ আপনার অ্যাকাউন্ট সক্রিয় রয়েছে</p>
@@ -402,58 +402,39 @@
     </div>
   </section>
 
-  <!-- Logged-in Members List Section (লগইন করা সদস্য তালিকা) -->
   <section id="members-section" class="section">
     <div class="container">
       <h2 class="section-title">রেজিস্ট্রার্ড সদস্যবৃন্দ</h2>
       <div id="member-list" class="member-grid">
-        <!-- JavaScript দিয়ে এখানে নাম যুক্ত হবে -->
-      </div>
+        </div>
     </div>
   </section>
 
-  <!-- Events & Notice Board Section (ইভেন্ট সেকশন) -->
   <section id="events-section" class="section bg-light">
     <div class="container">
-      <h2 class="section-title">আসন্ন ইভেন্ট ও নোটিশ বোর্ড</h2>
-      <div class="event-grid">
-        
-        <div class="event-card">
-          <div class="event-date">📅 ১০ এপ্রিল, ২০২৬</div>
-          <h3 class="event-title">বার্ষিক পারিবারিক মিলাদ মাহফিল</h3>
-          <p>স্থান ভাদুর মিয়া বাড়িি জামে মসজিদ। সকল সদস্যকে উপস্থিত থাকার জন্য অনুরোধ করা হচ্ছে।</p>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date">📅 ঈদ-উল-ফিতর এর দিন</div>
-          <h3 class="event-title">ঈদ পুনর্মিলনী সভা ও প্রীতিভোজ</h3>
-          <p>স্থান: বাহাদুর মিঞা বাড়ির প্রাঙ্গণ। ঈদের জামাত শেষে সকাল ১০টায় জমায়েত।</p>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date">📅 ২৫ মে, ২০২৬</div>
-          <h3 class="event-title">বাড়ি উন্নয়ন বিষয়ক আলোচনা সভা</h3>
-          <p>স্থান: মধ্য ভাদুর। বাড়ির সীমানা ও মসজিদ সংস্কার কাজ সংক্রান্ত বিশেষ মিটিং।</p>
-        </div>
-
+      <h2 class="section-title">সাম্প্রতিক ইভেন্ট</h2>
+      
+      <div class="single-event-box">
+        <span class="event-badge-tag">RECENT EVENT</span>
+        <h3 class="event-main-title">🎉 GET TOGETHER</h3>
+        <p class="event-desc">ভাদুর মিয়া বাড়ির সকল সদস্য ও গুণীজনদের নিয়ে বিশেষ গেট-টুগেদার অনুষ্ঠান।</p>
       </div>
+
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">আমাদের বাড়ির কথা</h2>
       <div class="about-content">
         <p>
-          লক্ষ্মীপুর জেলার রামগঞ্জ উপজেলার ঐতিহ্যবাহী মধ্য ভাদুর এলাকায় অবস্থিত <strong>ভাদুর মিয়া বাড়ি</strong>। 
+          লক্ষ্মীপুর জেলার রামগঞ্জ উপজেলার ঐতিহ্যবাহী <strong>ভাদুর মিয়া বাড়ি (Bhadur Mia Bari)</strong>। 
           এটি কেবল একটি আবাসন নয়, বরং বহুকালের স্মৃতি, পারিবারিক ঐতিহ্য এবং একতার প্রতীক।
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Group Link Section -->
   <section id="group-link" class="section group-section">
     <div class="container">
       <h2 class="section-title">আমাদের পারিবারিক/গ্রামের গ্রুপ</h2>
@@ -464,16 +445,15 @@
     </div>
   </section>
 
-  <!-- Location & Maps Section -->
   <section id="location" class="section bg-light" style="text-align: center;">
     <div class="container">
       <h2 class="section-title">আমাদের অবস্থান ও গুগল ম্যাপ</h2>
       <p class="address-text">
-        📍 <strong>ঠিকানা:</strong> ভাদুর মিয়া বাড়ি, মধ্য ভাদুর, রামগঞ্জ, লক্ষ্মীপুর।
+        📍 <strong>ঠিকানা:</strong> ভাদুর মিয়া বাড়ি, এরশাদ হোসেন রোড, রামগঞ্জ ৩৭২০।
       </p>
       <div class="map-box">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.023812345678!2d90.8512!3d23.1021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754eca96df739bf%3A0x86f5b2b412ebebe8!2sRamganj%2C%20Lakshmipur!5e0!3m2!1sen!2sbd!4v1680000000000!5m2!1sen!2sbd" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.023812345678!2d90.8512!3d23.1021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754eca96df739bf%3A0x86f5b2b412ebebe8!2sBhadur%20Mia%20Bari%2C%20Ershad%20Hossain%20Rd%2C%20Ramganj%203720!5e0!3m2!1sen!2sbd!4v1680000000000!5m2!1sen!2sbd" 
           width="100%" 
           height="380" 
           style="border:0;" 
@@ -481,116 +461,18 @@
           loading="lazy">
         </iframe>
       </div>
-      <a href="https://maps.google.com/?q=Ramganj,Lakshmipur" target="_blank" class="map-btn-link">
+      <a href="https://www.google.com/maps/search/?api=1&query=Bhadur+Mia+Bari+Ershad+Hossain+Rd+Ramganj+3720" target="_blank" class="map-btn-link">
         🗺️ সরাসরি গুগল ম্যাপস অ্যাপে লোকেশন দেখুন
       </a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© ২০২৬ ভাদুর মিয়া বাড়ি | সর্বস্বত্ব সংরক্ষিত</p>
+      <p>© ২০২৬ ভাদুর মিয়া বাড়ি | সর্বস্বত্ব সংরক্ষিত</p>
     </div>
   </footer>
 
-  <!-- JavaScript (Account Management & Dynamic Member List) -->
   <script>
     function switchTab(type) {
-      const loginForm = document.getElementById('login-form');
-      const signupForm = document.getElementById('signup-form');
-      const btns = document.querySelectorAll('.tab-btn');
-
-      if (type === 'login') {
-        loginForm.style.display = 'block';
-        signupForm.style.display = 'none';
-        btns[0].classList.add('active');
-        btns[1].classList.remove('active');
-      } else {
-        loginForm.style.display = 'none';
-        signupForm.style.display = 'block';
-        btns[0].classList.remove('active');
-        btns[1].classList.add('active');
-      }
-    }
-
-    function handleSignup(e) {
-      e.preventDefault();
-      const name = document.getElementById('signup-username').value.trim();
-      const pass = document.getElementById('signup-password').value;
-
-      let users = JSON.parse(localStorage.getItem('site_users')) || {};
-      
-      if(users[name]) {
-        alert('এই নামের অ্যাকাউন্ট ইতিমধ্যে তৈরি করা আছে!');
-        return;
-      }
-
-      users[name] = pass;
-      localStorage.setItem('site_users', JSON.stringify(users));
-      alert('অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! এখন লগইন করুন।');
-      switchTab('login');
-      updateMemberList();
-    }
-
-    function handleLogin(e) {
-      e.preventDefault();
-      const name = document.getElementById('login-username').value.trim();
-      const pass = document.getElementById('login-password').value;
-
-      let users = JSON.parse(localStorage.getItem('site_users')) || {};
-
-      if(users[name] && users[name] === pass) {
-        localStorage.setItem('logged_in_user', name);
-        checkUserStatus();
-      } else {
-        alert('নাম অথবা পাসওয়ার্ড ভুল হয়েছে!');
-      }
-    }
-
-    function handleLogout() {
-      localStorage.removeItem('logged_in_user');
-      checkUserStatus();
-    }
-
-    function checkUserStatus() {
-      const activeUser = localStorage.getItem('logged_in_user');
-      const authForms = document.getElementById('auth-forms');
-      const userProfile = document.getElementById('user-profile');
-      const displayName = document.getElementById('display-name');
-
-      if(activeUser) {
-        authForms.style.display = 'none';
-        userProfile.style.display = 'block';
-        displayName.innerText = activeUser;
-      } else {
-        authForms.style.display = 'block';
-        userProfile.style.display = 'none';
-      }
-      updateMemberList();
-    }
-
-    // ইউজার লিস্ট রেন্ডার করার ফাংশন
-    function updateMemberList() {
-      const memberListDiv = document.getElementById('member-list');
-      let users = JSON.parse(localStorage.getItem('site_users')) || {};
-      const userNames = Object.keys(users);
-
-      if (userNames.length === 0) {
-        memberListDiv.innerHTML = '<p style="color: #777;">এখনও কোনো সদস্য অ্যাকাউন্ট তৈরি করেননি।</p>';
-        return;
-      }
-
-      memberListDiv.innerHTML = userNames.map(name => `
-        <div class="member-badge">
-          👤 ${name}
-        </div>
-      `).join('');
-    }
-
-    // পেজ লোড হবার পর চেক
-    checkUserStatus();
-  </script>
-
-</body>
-</html>
+      const login
