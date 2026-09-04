@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ভাদুর মিয়া বাড়ি - BHADUR MIA BARI </title>
+  <title>ভাদুর মিয়া বাড়ি - BHADUR MIA BARI</title>
   
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -281,7 +282,7 @@
     .group-btn-link {
       display: inline-block;
       padding: 14px 32px;
-      background-color: #25d366;
+      background-color: #1877f2;
       color: #ffffff;
       font-size: 1.2rem;
       font-weight: bold;
@@ -292,7 +293,7 @@
     }
 
     .group-btn-link:hover {
-      background-color: #128c7e;
+      background-color: #0d65d9;
       transform: translateY(-3px);
     }
 
@@ -336,14 +337,16 @@
 </head>
 <body>
 
+  <!-- Hero Header -->
   <header class="hero">
     <div class="container">
       <h1 class="welcome-title">WELCOME TO BHADUR MIA BARI</h1>
-      <p class="subtitle">এরশাদ হোসেন রোড, রামগঞ্জ ৩৭২০</p>
+      <p class="subtitle">মধ্য ভাদুর, এরশাদ হোসেন রোড, রামগঞ্জ ৩৭২০</p>
       <a href="#events-section" class="btn">ইভেন্ট ও নোটিশ দেখুন</a>
     </div>
   </header>
 
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="logo">ভাদুর মিয়া বাড়ি</div>
@@ -357,17 +360,20 @@
     </div>
   </nav>
 
+  <!-- Offline Account / Login Section -->
   <section id="account-section" class="section bg-light">
     <div class="container">
       <h2 class="section-title">মেম্বার অ্যাকাউন্ট (নাম ও পাসওয়ার্ড)</h2>
       
       <div class="auth-container">
+        <!-- Logged Out View -->
         <div id="auth-forms">
           <div class="tab-buttons">
             <button class="tab-btn active" onclick="switchTab('login')">লগইন করুন</button>
             <button class="tab-btn" onclick="switchTab('signup')">নতুন অ্যাকাউন্ট</button>
           </div>
 
+          <!-- Login Form -->
           <form id="login-form" onsubmit="handleLogin(event)">
             <div class="form-group">
               <label>ইউজার নেম / নাম</label>
@@ -380,6 +386,7 @@
             <button type="submit" class="submit-btn">লগইন</button>
           </form>
 
+          <!-- Signup Form -->
           <form id="signup-form" onsubmit="handleSignup(event)" style="display: none;">
             <div class="form-group">
               <label>আপনার নাম</label>
@@ -393,6 +400,7 @@
           </form>
         </div>
 
+        <!-- Logged In Profile View -->
         <div id="user-profile" class="user-profile">
           <h3>স্বাগতম, <span id="display-name" style="color: #143d59;"></span>!</h3>
           <p style="margin-top: 5px; color: green;">✓ আপনার অ্যাকাউন্ট সক্রিয় রয়েছে</p>
@@ -402,14 +410,17 @@
     </div>
   </section>
 
+  <!-- Logged-in Members List Section -->
   <section id="members-section" class="section">
     <div class="container">
       <h2 class="section-title">রেজিস্ট্রার্ড সদস্যবৃন্দ</h2>
       <div id="member-list" class="member-grid">
-        </div>
+        <!-- JavaScript দিয়ে এখানে নাম যুক্ত হবে -->
+      </div>
     </div>
   </section>
 
+  <!-- Recent Event Section -->
   <section id="events-section" class="section bg-light">
     <div class="container">
       <h2 class="section-title">সাম্প্রতিক ইভেন্ট</h2>
@@ -423,33 +434,36 @@
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">আমাদের বাড়ির কথা</h2>
       <div class="about-content">
         <p>
-          লক্ষ্মীপুর জেলার রামগঞ্জ উপজেলার ঐতিহ্যবাহী <strong>ভাদুর মিয়া বাড়ি (Bhadur Mia Bari)</strong>। 
+          লক্ষ্মীপুর জেলার রামগঞ্জ উপজেলার ঐতিহ্যবাহী মধ্য ভাদুর এলাকার <strong>ভাদুর মিয়া বাড়ি (Bhadur Mia Bari)</strong>। 
           এটি কেবল একটি আবাসন নয়, বরং বহুকালের স্মৃতি, পারিবারিক ঐতিহ্য এবং একতার প্রতীক।
         </p>
       </div>
     </div>
   </section>
 
+  <!-- Group Link Section (আপনার ফেসবুক গ্রুপ লিংক যুক্ত করা হয়েছে) -->
   <section id="group-link" class="section group-section">
     <div class="container">
-      <h2 class="section-title">আমাদের পারিবারিক/গ্রামের গ্রুপ</h2>
-      <p class="group-desc">বাড়ির সবার সাথে যুক্ত থাকতে এবং আপডেট পেতে আমাদের গ্রুপে যোগ দিন:</p>
-      <a href="https://facebook.com" target="_blank" class="group-btn-link">
-        👥 আমাদের গ্রুপে জয়েন করুন
+      <h2 class="section-title">আমাদের ফেসবুক গ্রুপ</h2>
+      <p class="group-desc">বাড়ির সবার সাথে যুক্ত থাকতে এবং আপডেট পেতে আমাদের অফিশিয়াল ফেসবুক গ্রুপে জয়েন করুন:</p>
+      <a href="https://www.facebook.com/share/g/197qJGTB8G/" target="_blank" class="group-btn-link">
+        👥 ফেসবুক গ্রুপে জয়েন করুন
       </a>
     </div>
   </section>
 
+  <!-- Location & Maps Section (আপডেট করা নতুন লোকেশন) -->
   <section id="location" class="section bg-light" style="text-align: center;">
     <div class="container">
       <h2 class="section-title">আমাদের অবস্থান ও গুগল ম্যাপ</h2>
       <p class="address-text">
-        📍 <strong>ঠিকানা:</strong> ভাদুর মিয়া বাড়ি, এরশাদ হোসেন রোড, রামগঞ্জ ৩৭২০।
+        📍 <strong>ঠিকানা:</strong> মধ্য ভাদুর - ভাদুর মিয়া বাড়ি, এরশাদ হোসেন রোড, রামগঞ্জ ৩৭২০।
       </p>
       <div class="map-box">
         <iframe 
@@ -467,12 +481,108 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© ২০২৬ ভাদুর মিয়া বাড়ি | সর্বস্বত্ব সংরক্ষিত</p>
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
     function switchTab(type) {
-      const login
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      const btns = document.querySelectorAll('.tab-btn');
+
+      if (type === 'login') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+      }
+    }
+
+    function handleSignup(e) {
+      e.preventDefault();
+      const name = document.getElementById('signup-username').value.trim();
+      const pass = document.getElementById('signup-password').value;
+
+      let users = JSON.parse(localStorage.getItem('site_users')) || {};
+      
+      if(users[name]) {
+        alert('এই নামের অ্যাকাউন্ট ইতিমধ্যে তৈরি করা আছে!');
+        return;
+      }
+
+      users[name] = pass;
+      localStorage.setItem('site_users', JSON.stringify(users));
+      alert('অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! এখন লগইন করুন।');
+      switchTab('login');
+      updateMemberList();
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const name = document.getElementById('login-username').value.trim();
+      const pass = document.getElementById('login-password').value;
+
+      let users = JSON.parse(localStorage.getItem('site_users')) || {};
+
+      if(users[name] && users[name] === pass) {
+        localStorage.setItem('logged_in_user', name);
+        checkUserStatus();
+      } else {
+        alert('নাম অথবা পাসওয়ার্ড ভুল হয়েছে!');
+      }
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('logged_in_user');
+      checkUserStatus();
+    }
+
+    function checkUserStatus() {
+      const activeUser = localStorage.getItem('logged_in_user');
+      const authForms = document.getElementById('auth-forms');
+      const userProfile = document.getElementById('user-profile');
+      const displayName = document.getElementById('display-name');
+
+      if(activeUser) {
+        authForms.style.display = 'none';
+        userProfile.style.display = 'block';
+        displayName.innerText = activeUser;
+      } else {
+        authForms.style.display = 'block';
+        userProfile.style.display = 'none';
+      }
+      updateMemberList();
+    }
+
+    function updateMemberList() {
+      const memberListDiv = document.getElementById('member-list');
+      let users = JSON.parse(localStorage.getItem('site_users')) || {};
+      const userNames = Object.keys(users);
+
+      if (userNames.length === 0) {
+        memberListDiv.innerHTML = '<p style="color: #777;">এখনও কোনো সদস্য অ্যাকাউন্ট তৈরি করেননি।</p>';
+        return;
+      }
+
+      memberListDiv.innerHTML = userNames.map(name => `
+        <div class="member-badge">
+          👤 ${name}
+        </div>
+      `).join('');
+    }
+
+    checkUserStatus();
+  </script>
+
+</body>
+</html>
